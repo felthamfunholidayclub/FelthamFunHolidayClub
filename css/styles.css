@@ -433,6 +433,20 @@ body {
     margin-bottom: 0;
 }
 
+.age-highlight {
+    background: linear-gradient(135deg, rgba(32, 178, 170, 0.15), rgba(72, 209, 204, 0.15));
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border-left: 4px solid #20b2aa;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    font-weight: 600;
+    font-family: 'Comfortaa', cursive;
+    margin: 1rem 0;
+    box-shadow: 0 4px 15px rgba(72, 209, 204, 0.1);
+    text-align: center;
+}
+
 .about-text strong {
     font-family: 'Comfortaa', cursive;
     font-weight: 600;
