@@ -1,0 +1,70 @@
+.credibility-section {
+    background: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.credibility-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.credibility-content h3 {
+    color: #20b2aa;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Fredoka', cursive;
+}
+
+.credibility-content p {
+    color: #5a6c7d;
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.credibility-badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.badge-item {
+    flex: 1;
+    max-width: 300px;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.badge-item:hover {
+    transform: translateY(-5px);
+}
+
+.credibility-badge {
+    height: 100px;
+    width: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.credibility-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.badge-item h4 {
+    color: #20b2aa;
+    margin-bottom: 0.5rem;
+    font-family: 'Fredoka', cursive;
+}
+
+.badge-item p {
+    color: #5a6c7d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
