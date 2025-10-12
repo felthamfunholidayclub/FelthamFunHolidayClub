@@ -1017,8 +1017,13 @@ body {
 }
 
 /* Call to Action */
+.join-community-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f0f8ff 0%, #e0f6ff 100%);
+}
+
 .vm-cta {
-    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    background: linear-gradient(135deg, #4a90e2 0%, #7e57c2 100%);
     color: white;
     text-align: center;
     padding: 2rem 1rem;

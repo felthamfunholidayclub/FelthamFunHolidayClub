@@ -1,0 +1,147 @@
+.benefits-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f8fffe 0%, #f0f8ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #7e57c2);
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 14px;
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.4rem;
+    text-align: center;
+    box-shadow: 0 6px 21px rgba(74, 144, 226, 0.15);
+    border: 2px solid #e0f6ff;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 28px rgba(74, 144, 226, 0.2);
+    border-color: #4a90e2;
+}
+
+.benefit-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #4a90e2, #7e57c2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.1rem;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(74, 144, 226, 0.3);
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.benefit-icon i {
+    font-size: 1.4rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.benefit-title {
+    color: #2c3e50;
+    font-family: 'Fredoka', cursive;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+}
+
+.benefit-text {
+    color: #5a6c7d;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.highlight-text {
+    color: #4a90e2;
+    font-weight: 600;
+    font-family: 'Comfortaa', cursive;
+}
+
+.contact-info {
+    margin-top: 0.7rem;
+    padding-top: 0.7rem;
+    border-top: 1px dashed rgba(74, 144, 226, 0.2);
+}
+
+.contact-info a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.contact-info a:hover {
+    color: #7e57c2;
+}
+
+.feature-tag {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.7rem;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 14px;
+    font-size: 0.7rem;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    transform: rotate(5deg);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: rotate(5deg) translateY(0); }
+    50% { transform: rotate(5deg) translateY(-3px); }
+}
+
+@media (max-width: 768px) {
+    .benefit-card {
+        padding: 1.1rem;
+    }
+    
+    .benefit-icon {
+        width: 49px;
+        height: 49px;
+    }
+    
+    .benefit-title {
+        font-size: 1rem;
+    }
+    
+    .benefit-text {
+        font-size: 0.8rem;
+    }
+}
