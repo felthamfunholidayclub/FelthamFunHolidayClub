@@ -1,0 +1,37 @@
+.legal-card {
+    background-color: #ffebeb;
+    border-left: 4px solid #ff4444;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.legal-title {
+    color: #cc0000;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.legal-title i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.legal-text {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+}
+
+.legal-text a {
+    color: #cc0000;
+    text-decoration: underline;
+}
+
+.legal-text a:hover {
+    color: #ff0000;
+}

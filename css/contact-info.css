@@ -1,0 +1,123 @@
+/* Contact Section Styles */
+#contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.inquiry-form,
+.contact-info {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* New Contact Info Styles */
+.contact-info {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info-wrapper {
+    background-color: #ff9933;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(255, 153, 51, 0.2);
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-top-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-col {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-col:hover,
+.contact-address:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.contact-row i {
+    font-size: 1.5rem;
+    color: #fff;
+    width: 24px;
+    text-align: center;
+}
+
+.contact-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-text a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+    color: #e9d8fd;
+}
+
+.contact-text .fa-external-link-alt {
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-info-wrapper {
+        padding: 1.5rem;
+    }
+
+    .contact-top-row {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-col,
+    .contact-address {
+        padding: 0.875rem;
+    }
+
+    .contact-text a {
+        font-size: 1rem;
+    }
+}
+
+/* Add some spacing between form and contact info */
+.inquiry-form {
+    margin-bottom: 1.5rem;
+}
