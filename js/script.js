@@ -32,13 +32,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const inquiryForm = document.getElementById('inquiryForm');
 const submitBtn = document.querySelector('.submit-btn');
 
-inquiryForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    // Change button state to show loading
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
+if (inquiryForm && submitBtn) {
+    inquiryForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Change button state to show loading
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
     
     // Collect form data
     const formData = new FormData(inquiryForm);
@@ -71,6 +72,7 @@ inquiryForm.addEventListener('submit', async function(e) {
     submitBtn.innerHTML = originalText;
     submitBtn.disabled = false;
 });
+}
 
 // Success message display
 function showSuccessMessage() {
@@ -201,6 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Form validation enhancement
 function validateForm() {
+    if (!inquiryForm) return true;
+    
     const requiredFields = inquiryForm.querySelectorAll('[required]');
     let isValid = true;
     
@@ -233,16 +237,18 @@ function validateForm() {
 }
 
 // Add real-time validation
-inquiryForm.addEventListener('input', (e) => {
-    const field = e.target;
-    if (field.hasAttribute('required')) {
-        if (field.value.trim()) {
-            field.style.borderColor = '#28a745';
-        } else {
-            field.style.borderColor = '#e9ecef';
+if (inquiryForm) {
+    inquiryForm.addEventListener('input', (e) => {
+        const field = e.target;
+        if (field.hasAttribute('required')) {
+            if (field.value.trim()) {
+                field.style.borderColor = '#28a745';
+            } else {
+                field.style.borderColor = '#e9ecef';
+            }
         }
-    }
-});
+    });
+}
 
 // Gallery Carousel Functionality
 let currentSlide = 0;
@@ -463,3 +469,112 @@ function optimizeGalleryImages() {
 
 // Initialize image optimization when DOM loads
 document.addEventListener('DOMContentLoaded', optimizeGalleryImages);
+
+// Premises Gallery Lightbox Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    initializePremisesGallery();
+});
+
+function initializePremisesGallery() {
+    const premisesItems = document.querySelectorAll('.premises-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    if (!lightbox) return;
+    
+    let currentImageIndex = 0;
+    const images = Array.from(premisesItems).map(item => ({
+        src: item.getAttribute('data-image'),
+        caption: item.getAttribute('data-caption')
+    }));
+    
+    // Open lightbox when clicking on premises item
+    premisesItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentImageIndex = index;
+            openLightbox();
+        });
+    });
+    
+    // Close lightbox
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Navigate lightbox
+    lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPreviousImage();
+    });
+    
+    lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNextImage();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            showPreviousImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    });
+    
+    function openLightbox() {
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        updateLightboxImage();
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    function showPreviousImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateLightboxImage();
+    }
+    
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateLightboxImage();
+    }
+    
+    function updateLightboxImage() {
+        const currentImage = images[currentImageIndex];
+        lightboxImage.src = currentImage.src;
+        lightboxCaption.textContent = currentImage.caption;
+    }
+}
+
+// Add scroll reveal animation for premises items
+document.addEventListener('DOMContentLoaded', () => {
+    const premisesObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    document.querySelectorAll('.premises-item').forEach(item => {
+        item.style.animationPlayState = 'paused';
+        premisesObserver.observe(item);
+    });
+});
