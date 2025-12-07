@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/extended-hours.css">
     <link rel="stylesheet" href="css/benefits.css">
     <link rel="stylesheet" href="css/contact-info.css">
+    <link rel="stylesheet" href="css/navbar-dropdown.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -35,20 +36,27 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Feltham Fun Holiday Club Logo" class="logo-image">
-                    <div class="logo-text">
-                        <h2>Feltham Fun Holiday Club</h2>
-                        <p class="tagline">Real Fun Real Friends</p>
-                    </div>
-                </a>
+                <img src="images/logo.png" alt="Feltham Fun Holiday Club Logo" class="logo-image">
+                <div class="logo-text">
+                    <h2>Feltham Fun Holiday Club</h2>
+                    <p class="tagline">Real Fun Real Friends</p>
+                </div>
             </div>
             <div class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="index.html#events" class="nav-link">Events</a>
                 <a href="photos.html" class="nav-link">Photos</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
-                <a href="about.html" class="nav-link active">About</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-toggle">
+                        Key Information
+                        <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html" class="active">About Us</a></li>
+                        <li><a href="policies.html">Policies</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -223,7 +231,7 @@
                         <p>I've been teaching for over 15 years and hold a degree in child care along with several courses in Early Years education. I also have extensive experience supporting students with special educational needs, ensuring that every child receives the personalized attention and care they deserve. I'm deeply committed to creating an inclusive and supportive environment where every child can thrive, regardless of their individual challenges or abilities.</p>
                         <p>My passion lies in creating a holiday club where curiosity and having fun is encouraged at every turn. I believe every child deserves a dedicated space to grow, explore their interests, and truly shine. Through engaging activities, patient guidance, and a warm, welcoming approach, I strive to help children build confidence, develop new skills, and create lasting friendships in a safe and nurturing environment.</p>
                         <div class="member-contact">
-                            <p><i class="fas fa-phone"></i> Phone: <a href="tel:+447424776158">07424 776158</a></p>
+                            <p><i class="fas fa-phone"></i> Phone: <a href="tel:+447424776158">07438 286315</a></p>
                             <p><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@felthamfunholidayclub.uk">contact@felthamfunholidayclub.uk</a></p>
                         </div>
                     </div>
@@ -253,13 +261,13 @@
                         <li><a href="index.html#events">Events</a></li>
                         <li><a href="photos.html">Photos</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p><i class="fas fa-phone"></i> Vanashree Trivedi: <a href="tel:+447405337104">07405 337104</a></p>
-                    <p><i class="fas fa-phone"></i> Elvia Acosta: <a href="tel:+447424776158">07424 776158</a></p>
+                    <p><i class="fas fa-phone"></i> Elvia Acosta: <a href="tel:+447424776158">07438 286315</a></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:contact@felthamfunholidayclub.uk">contact@felthamfunholidayclub.uk</a></p>
                 </div>
             </div>

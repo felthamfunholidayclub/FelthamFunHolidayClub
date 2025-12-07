@@ -13,6 +13,31 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
+// Dropdown Menu Handling
+const navDropdowns = document.querySelectorAll('.nav-dropdown');
+navDropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    
+    if (toggle) {
+        toggle.addEventListener('click', (e) => {
+            // On mobile, toggle the dropdown
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
+        });
+    }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    navDropdowns.forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -35,6 +60,21 @@ const submitBtn = document.querySelector('.submit-btn');
 if (inquiryForm && submitBtn) {
     inquiryForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+        
+        // Check if T&C checkbox is checked
+        const tcAgreement = document.getElementById('tcAgreement');
+        if (!tcAgreement || !tcAgreement.checked) {
+            showErrorMessage('Please read and agree to the Terms & Conditions before submitting.');
+            // Highlight the checkbox
+            const checkboxGroup = document.querySelector('.checkbox-group');
+            if (checkboxGroup) {
+                checkboxGroup.style.animation = 'shake 0.5s ease-in-out';
+                setTimeout(() => {
+                    checkboxGroup.style.animation = '';
+                }, 500);
+            }
+            return;
+        }
         
         // Change button state to show loading
         const originalText = submitBtn.innerHTML;
@@ -93,6 +133,27 @@ function showSuccessMessage() {
     
     // Scroll to success message
     successDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Error message display
+function showErrorMessage(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.innerHTML = `
+        <div style="background: #f8d7da; color: #721c24; padding: 1rem; border-radius: 8px; margin: 1rem 0; border: 1px solid #f5c6cb;">
+            <i class="fas fa-exclamation-circle"></i> ${message}
+        </div>
+    `;
+    
+    inquiryForm.insertBefore(errorDiv, inquiryForm.firstChild);
+    
+    // Remove error message after 5 seconds
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000);
+    
+    // Scroll to error message
+    errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 // Fallback message for CSV download

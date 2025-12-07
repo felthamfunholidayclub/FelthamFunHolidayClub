@@ -15,6 +15,7 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/navbar-dropdown.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -32,20 +33,27 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Feltham Fun Holiday Club Logo" class="logo-image">
-                    <div class="logo-text">
-                        <h2>Feltham Fun Holiday Club</h2>
-                        <p class="tagline">Real Fun Real Friends</p>
-                    </div>
-                </a>
+                <img src="images/logo.png" alt="Feltham Fun Holiday Club Logo" class="logo-image">
+                <div class="logo-text">
+                    <h2>Feltham Fun Holiday Club</h2>
+                    <p class="tagline">Real Fun Real Friends</p>
+                </div>
             </div>
             <div class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="index.html#events" class="nav-link">Events</a>
                 <a href="photos.html" class="nav-link active">Photos</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
-                <a href="about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link nav-dropdown-toggle">
+                        Key Information
+                        <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </span>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="policies.html">Policies</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -306,13 +314,13 @@
                         <li><a href="index.html#events">Events</a></li>
                         <li><a href="photos.html">Photos</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p><i class="fas fa-phone"></i> Vanashree Trivedi: <a href="tel:+447405337104">07405 337104</a></p>
-                    <p><i class="fas fa-phone"></i> Elvia Acosta: <a href="tel:+447424776158">07424 776158</a></p>
+                    <p><i class="fas fa-phone"></i> Elvia Acosta: <a href="tel:+447424776158">07438 286315</a></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:contact@felthamfunholidayclub.uk">contact@felthamfunholidayclub.uk</a></p>
                 </div>
             </div>

@@ -1,0 +1,106 @@
+/* Navbar Dropdown Menu Styles */
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.nav-dropdown-toggle:hover {
+    color: #ff6b6b;
+}
+
+.dropdown-arrow {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+    color: #ff6b6b;
+    border-left-color: #ff6b6b;
+    padding-left: 1.5rem;
+}
+
+.dropdown-menu a.active {
+    background-color: #ffe6e6;
+    color: #ff6b6b;
+    border-left-color: #ff6b6b;
+}
+
+/* Mobile responsive - hide dropdown on smaller screens */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: hidden;
+        transform: none;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0.5rem 0;
+        padding: 0;
+    }
+
+    .nav-dropdown.active .dropdown-menu {
+        visibility: visible;
+    }
+
+    .dropdown-menu a {
+        padding-left: 2rem;
+    }
+
+    .dropdown-menu a:hover {
+        padding-left: 2.25rem;
+    }
+}
