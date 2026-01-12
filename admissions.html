@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Policies - Feltham Fun Holiday Club</title>
+    <title>Admissions - Feltham Fun Holiday Club</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/fevicon.png">
@@ -18,21 +18,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        .policies-section {
+        .admissions-section {
             padding: 2rem 0 4rem 0;
             scroll-padding-top: 100px;
         }
 
-        .policies-section h1 {
+        .admissions-section h1 {
             padding-top: 2rem;
             margin-bottom: 2rem !important;
             font-size: 2.5rem !important;
             font-weight: 700 !important;
             color: #333 !important;
             line-height: 1.2 !important;
+            text-align: center;
         }
 
-        .policies-intro {
+        .admissions-intro {
             text-align: center;
             margin-bottom: 3rem;
             max-width: 900px;
@@ -44,130 +45,155 @@
             border-left: 4px solid #ff6b6b;
         }
 
-        .policies-intro p {
+        .admissions-intro p {
             font-size: 1.15rem;
             color: #333;
             line-height: 1.8;
             font-weight: 500;
         }
 
-        .policies-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
+        .admissions-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .policy-card {
+        .admissions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .admissions-card {
             background: white;
             border-radius: 1rem;
-            padding: 1.5rem;
+            padding: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             border: 2px solid transparent;
-            display: flex;
-            flex-direction: column;
         }
 
-        .policy-card:hover {
+        .admissions-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
             border-color: #ff6b6b;
         }
 
-        .policy-icon {
-            font-size: 2rem;
+        .admissions-card h3 {
             color: #ff6b6b;
-            margin-bottom: 0.75rem;
-        }
-
-        .policy-card h3 {
-            color: #333;
-            margin-bottom: 0.5rem;
-            font-size: 1.15rem;
-        }
-
-        .policy-card p {
-            color: #666;
-            font-size: 0.85rem;
-            line-height: 1.5;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            flex-grow: 1;
+            font-weight: 600;
         }
 
-        .policy-card .policy-meta {
+        .admissions-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .admissions-card ul {
+            color: #666;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+        }
+
+        .admissions-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #4a90e2 0%, #7e57c2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin-top: 3rem;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            border-top: 1px solid #eee;
-            padding-top: 1.5rem;
-            margin-top: auto;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .policy-date {
-            font-size: 0.85rem;
-            color: #999;
-            font-style: italic;
-        }
-
-        .download-btn {
+        .cta-button {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.6rem;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 0.7rem 1.4rem;
-            border-radius: 0.4rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             text-decoration: none;
+            font-family: 'Comfortaa', cursive;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            transform: skewX(-5deg);
-        }
-
-        .download-btn:hover {
-            transform: skewX(-5deg) translateY(-3px);
-            box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
-            background: linear-gradient(135deg, #ff5252 0%, #ff3838 100%);
-        }
-
-        .download-btn i {
             font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
 
-        @media (max-width: 1200px) {
-            .policies-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #ff6b35;
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .qr-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 1rem;
+        }
+
+        .qr-section h4 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .qr-code {
+            max-width: 200px;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 768px) {
-            .policies-container {
+            .admissions-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
-        }
 
+            .admissions-section h1 {
+                font-size: 2rem !important;
+            }
 
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        .last-updated {
-            text-align: center;
-            color: #555;
-            font-size: 0.95rem;
-            margin-top: 4rem;
-            padding: 2rem;
-            border-top: 2px solid #ff6b6b;
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
-            border-radius: 0.8rem;
-            font-weight: 500;
-        }
-
-        .last-updated i {
-            color: #ff6b6b;
-            margin-right: 0.5rem;
+            .admissions-content {
+                padding: 0 1rem;
+            }
         }
     </style>
 </head>
@@ -204,8 +230,8 @@
                     </span>
                     <ul class="dropdown-menu">
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="policies.html" class="active">Policies</a></li>
-                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="policies.html">Policies</a></li>
+                        <li><a href="admissions.html" class="active">Admissions</a></li>
                     </ul>
                 </div>
             </div>
@@ -217,80 +243,42 @@
         </div>
     </nav>
 
-    <!-- Policies Section -->
-    <section class="policies-section">
+    <!-- Admissions Section -->
+    <section class="admissions-section">
         <div class="container">
-            <h1 style="text-align: center; color: #333; margin-bottom: 1rem;">Policies & Documents</h1>
+            <h1>Admissions</h1>
             
-            <div class="policies-intro">
-                <p>At Feltham Fun Holiday Club, we are committed to transparency and maintaining the highest standards of care. Below you'll find our key policies and documents. Download them to learn more about how we operate and the safeguards we have in place.</p>
+            <div class="admissions-intro">
+                <p>Join Feltham Fun Holiday Club! Our simple admission process ensures the best experience for your child. Complete the form in just 5-10 minutes.</p>
             </div>
 
-            <!-- Policies Cards Container -->
-            <div class="policies-container">
-                <!-- Privacy Policy Card -->
-                <div class="policy-card">
-                    <div class="policy-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Privacy Policy</h3>
-                    <p>How we collect, use, and protect your personal information.</p>
-                    <div class="policy-meta">
-                        <span class="policy-date">Last updated: December 2025</span>
-                        <a href="policies/privacy_policy_feltham_fun_holiday_club.pdf" target="_blank" rel="noopener noreferrer" class="download-btn">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                    </div>
+            <div class="admissions-content">
+                <div class="admissions-card" style="max-width: 800px; margin: 0 auto;">
+                    <h3><i class="fas fa-clipboard-list"></i> What We Need</h3>
+                    <ul style="text-align: left; margin: 1rem 0;">
+                        <li><strong>Child Details:</strong> Name, age, school, emergency contacts</li>
+                        <li><strong>Parent Info:</strong> Contact details, relationship, preferences</li>
+                        <li><strong>Medical Info:</strong> Allergies, medications, doctor's details</li>
+                        <li><strong>Process:</strong> 5-10 minutes, secure online form</li>
+                    </ul>
                 </div>
 
-                <!-- Terms & Conditions Card -->
-                <div class="policy-card">
-                    <div class="policy-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>Terms & Conditions</h3>
-                    <p>Rules, regulations, and enrollment requirements for our services.</p>
-                    <div class="policy-meta">
-                        <span class="policy-date">Last updated: December 2025</span>
-                        <a href="policies/t_and_c_feltham_fun_holiday_club.pdf" target="_blank" rel="noopener noreferrer" class="download-btn">
-                            <i class="fas fa-download"></i> Download
+                <div class="cta-section">
+                    <h3>Start Application</h3>
+                    
+                    <div class="cta-buttons">
+                        <a href="https://forms.zohopublic.eu/trivedivanashreegm1/form/Felthamfunholidayclubadmissionform/formperma/XQYQ6u7Mga_GpmmCJvJOaZnh-bStmu5KS_7fdXI-M0k" class="cta-button" target="_blank">
+                            <i class="fas fa-edit"></i>
+                            Fill Online Form
                         </a>
                     </div>
-                </div>
 
-                <!-- Child Safeguarding Policy Card -->
-                <div class="policy-card">
-                    <div class="policy-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Child Safeguarding</h3>
-                    <p>Our safeguarding procedures, staff vetting, and child protection commitments.</p>
-                    <div class="policy-meta">
-                        <span class="policy-date">Last updated: December 2025</span>
-                        <a href="policies/safeguarding_feltham_fun_holiday_club.pdf" target="_blank" rel="noopener noreferrer" class="download-btn">
-                            <i class="fas fa-download"></i> Download
-                        </a>
+                    <div class="qr-section">
+                        <h4>Mobile Access</h4>
+                        <p>Scan QR code to open form on your phone.</p>
+                        <img src="images/admission_form/felthamfunholidayclubadmissionform.png" alt="QR Code for Admission Form" class="qr-code">
                     </div>
                 </div>
-
-                <!-- Comprehensive Policies Bundle Card -->
-                <div class="policy-card">
-                    <div class="policy-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>All Policies Bundle</h3>
-                    <p>Complete collection of all policies and procedures in one document.</p>
-                    <div class="policy-meta">
-                        <span class="policy-date">Last updated: December 2025</span>
-                        <a href="policies/bundle_feltham_fun_holiday_club.pdf" target="_blank" rel="noopener noreferrer" class="download-btn">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="last-updated">
-                <p><i class="fas fa-info-circle"></i> Download the PDFs above to review our complete policies. Subject to periodic review and updates. Last comprehensive review: December 2025</p>
             </div>
         </div>
     </section>
@@ -313,10 +301,11 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="policies.html">Policies</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
                         <li><a href="photos.html">Photos</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
-                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
