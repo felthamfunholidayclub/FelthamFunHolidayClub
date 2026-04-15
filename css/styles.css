@@ -204,6 +204,20 @@ body {
     overflow: hidden;
 }
 
+.promo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.promo-row .promo-badge {
+    flex: 1 1 420px;
+    min-width: 320px;
+    max-width: 540px;
+}
+
 .promo-badge {
     background: linear-gradient(135deg, #4a90e2, #7e57c2);
     border-radius: 25px;
